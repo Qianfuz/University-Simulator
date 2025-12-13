@@ -1,6 +1,7 @@
-package Data;
+package model;
 
 public class Drug {
+
     private String name;
     private int number;
     private int healthValue;
@@ -16,15 +17,12 @@ public class Drug {
     public String getName() {
         return name;
     }
-
     public int getHealthValue() {
         return healthValue;
     }
-
     public int getPrice() {
         return price;
     }
-
     public int getNumber() {
         return number;
     }

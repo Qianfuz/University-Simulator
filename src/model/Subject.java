@@ -1,4 +1,4 @@
-package Data;
+package model;
 
 public class Subject {
 
@@ -17,11 +17,9 @@ public class Subject {
     public String getName(){
         return name;
     }
-
     public int getGain() {
         return gain;
     }
-
     public int getMaxProgress() {
         return maxProgress;
     }
