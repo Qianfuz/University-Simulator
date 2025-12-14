@@ -37,7 +37,7 @@ public class Bank {
                 stu.setMoney(stu.getMoney()*(100+chosen.getRate())/100);
                 sb.append("你投资成功了！");
             } else {
-                stu.setMoney((stu.getMoney()*(100+chosen.getRate())/100)/2);
+                stu.setMoney((stu.getMoney()*(100-chosen.getRate())/100));
                 sb.append("投资有风险，你失败了！");
             }
         } else {

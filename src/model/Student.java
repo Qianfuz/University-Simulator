@@ -42,13 +42,14 @@ public class Student {
         items.add(new Item("卫生纸", 200, "特殊道具，可以进入神奇的状态，提高开心值！", 0, -10, 2));//未完善
         items.add(new Item("保时捷", 500000, "拥有他是不是可以找到妹妹？", 0, 100, 3));//未
 
-        economics.add(new Economic("定期存款", "风险极低，收益少", 0, 10, 1));
-        economics.add(new Economic("彩票", "低门槛，高收益", 2, 40000, 95));
-        economics.add(new Economic("刮刮乐", "高收益", 20, 50000, 95));
-        economics.add(new Economic("A股", "高风险，高收益", 500, 5000, 70));
-        economics.add(new Economic("美股", "高风险，高收益", 2000, 4000, 80));
-        economics.add(new Economic("期货", "极高风险，极高收益", 3000, 40000, 98));
-        economics.add(new Economic("基金","风险极低，收益少",0,20,3));
+        economics.add(new Economic("定期存款", "风险极低，收益少", 0, 2, 1));
+        economics.add(new Economic("基金","风险极低，收益少",0,3,3));
+        economics.add(new Economic("彩票", "低门槛，高收益", 200, 4000, 99));
+        economics.add(new Economic("刮刮乐", "高收益", 200, 5000, 99));
+        economics.add(new Economic("A股", "高风险，高收益", 5000, 750, 70));
+        economics.add(new Economic("美股", "高风险，高收益", 8000, 1500, 85));
+        economics.add(new Economic("期货", "极高风险，极高收益", 30000, 15000, 98));
+
     }
 
     //
