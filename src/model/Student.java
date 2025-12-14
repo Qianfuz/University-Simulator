@@ -10,7 +10,7 @@ public class Student {
     private int money;
 
     private List<Subject>subjects=new ArrayList<>();
-    //private List<Item>items=new ArrayList<>();
+    private List<Item>items=new ArrayList<>();
     private List<Drug>drugs=new ArrayList<>();
 
     public Student(String name,String character,int energyValue,int healthValue,int money){
@@ -30,6 +30,18 @@ public class Student {
         drugs.add(new Drug("头孢克肟",0, 300, 8));
         drugs.add(new Drug("神奇药丸",0, 10000, 999));
         drugs.add(new Drug("扛着", 0,0, -15)); // 特殊药，反向扣血
+
+        items.add(new Item("iPhone17ProMax",9999,"综合最强手机，拥有它你的学习效率会大幅提高！甚至会有额外的加成！",10,5,1));
+        items.add(new Item("iPadPro",8999,"超级大的平板,拥有它你的学习效率会中幅提高！甚至会有额外的加成！",7,4,1));
+        items.add(new Item("AppleWatch",2999,"健康功能很强的手表，你会更注意健康，甚至会有额外的加成！",1,15,1));
+        items.add(new Item("HUAWEIMate80Pro",7999,"很好的手机，拥有它你的学习效率会中幅提高！甚至会有额外的加成！",8,4,1));
+        items.add(new Item("Xiaomi17",1999,"超级性价比，学习效率提高",4,0,1));
+        items.add(new Item("七度空间",5,"额...包扎伤口的重要道具，可以止血",0,8,2));
+        items.add(new Item("创可贴",5,"包扎伤口的重要道具，可以止血",0,5,2));
+        items.add(new Item("卫生纸",200,"特殊道具，可以进入神奇的状态，提高开心值！",0,-10,2));//未完善
+        items.add(new Item("保时捷",500000,"拥有他是不是可以找到妹妹？",0,100,3));//未
+
+
     }
 
     //
@@ -82,9 +94,26 @@ public class Student {
         return null;
     }
 
+    public Item findItem(String name){
+        for (int k = 0; k < items.size(); k++) {
+            Item i = items.get(k);
+            if(i.getName().equalsIgnoreCase(name)){
+                return i;
+            }
+        }
+        return null;
+    }
+    //
     public List<Drug> getDrugs() {
         return drugs;
     }
+    public List<Item> getItems() {
+        return items;
+    }
+    public List<Subject> getSubjects() {
+        return subjects;
+    }
     //
+
 
 }

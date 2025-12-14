@@ -4,6 +4,7 @@ import model.Student;
 import system.StudySystem;
 import system.Hospital;
 import system.Canteen;
+import system.Store;
 
 import java.util.*;
 
@@ -14,18 +15,22 @@ public class GameEngine {
     private final StudySystem studySystem;
     private final Hospital hospital;
     private final Canteen canteen;
+    private final Store store;
 
-    public GameEngine(StudySystem studySystem, Hospital hospital, Canteen canteen) {
+    public GameEngine(StudySystem studySystem, Hospital hospital, Canteen canteen,Store store) {
         this.studySystem = studySystem;
         this.hospital = hospital;
         this.canteen = canteen;
+        this.store = store;
     }
 
     // 跑 N 天游玩
     public void run(Student s1, int days, Scanner sc) {
-
-        System.out.println(s1.getName() + " 同学你好，请输入一门科目，进行学习 English Java Math Chinese Algorithm");
-
+        System.out.println("因为你成绩优异，被奖励 50000 奖学金，你可以购买一件物品");
+        s1.setMoney(50000);
+        System.out.println(s1.getName() + " 同学你好，每天睡醒，请输入一门科目，进行学习 English Java Math Chinese Algorithm");
+        System.out.println(store.showItemList(s1));
+        System.out.println(store.buy(s1,sc.next()));
         for (int i = 0; i < days; i++) {
             System.out.println("今天是第" + (i + 1) + "天");
 
@@ -68,6 +73,9 @@ public class GameEngine {
                     System.out.println(hospital.use(s1, sc.next()));
                 }
             }
+            //买东西
+            System.out.println(store.showItemList(s1));
+            System.out.println(store.buy(s1,sc.next()));
         }
 
         System.out.println("放假啦");
