@@ -5,6 +5,7 @@ import model.Student;
 import java.util.*;
 
 public class Hospital {
+
     public String showDrugList(Student stu){
         List<Drug> drugs = stu.getDrugs();
         StringBuilder sb = new StringBuilder();

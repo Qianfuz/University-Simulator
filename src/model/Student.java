@@ -12,36 +12,43 @@ public class Student {
     private List<Subject>subjects=new ArrayList<>();
     private List<Item>items=new ArrayList<>();
     private List<Drug>drugs=new ArrayList<>();
+    private List<Economic>economics=new ArrayList<>();
 
-    public Student(String name,String character,int energyValue,int healthValue,int money){
-        this.name=name;
-        this.character=character;
-        this.energyValue=energyValue;
-        this.healthValue=healthValue;
-        this.money=money;
+    public Student(String name,String character,int energyValue,int healthValue,int money) {
+        this.name = name;
+        this.character = character;
+        this.energyValue = energyValue;
+        this.healthValue = healthValue;
+        this.money = money;
 
-        subjects.add(new Subject("English", 5,100));
-        subjects.add(new Subject("Math", 6,100));
-        subjects.add(new Subject("Java", 4,100));
-        subjects.add(new Subject("Chinese", 10,100));
-        subjects.add(new Subject("Algorithm",3, 500));
+        subjects.add(new Subject("English", 5, 100));
+        subjects.add(new Subject("Math", 6, 100));
+        subjects.add(new Subject("Java", 4, 100));
+        subjects.add(new Subject("Chinese", 10, 100));
+        subjects.add(new Subject("Algorithm", 3, 500));
 
-        drugs.add(new Drug("感冒药",0, 200, 5));
-        drugs.add(new Drug("头孢克肟",0, 300, 8));
-        drugs.add(new Drug("神奇药丸",0, 10000, 999));
-        drugs.add(new Drug("扛着", 0,0, -15)); // 特殊药，反向扣血
+        drugs.add(new Drug("感冒药", 0, 200, 5));
+        drugs.add(new Drug("头孢克肟", 0, 300, 8));
+        drugs.add(new Drug("神奇药丸", 0, 10000, 999));
+        drugs.add(new Drug("扛着", 0, 0, -15)); // 特殊药，反向扣血
 
-        items.add(new Item("iPhone17ProMax",9999,"综合最强手机，拥有它你的学习效率会大幅提高！甚至会有额外的加成！",10,5,1));
-        items.add(new Item("iPadPro",8999,"超级大的平板,拥有它你的学习效率会中幅提高！甚至会有额外的加成！",7,4,1));
-        items.add(new Item("AppleWatch",2999,"健康功能很强的手表，你会更注意健康，甚至会有额外的加成！",1,15,1));
-        items.add(new Item("HUAWEIMate80Pro",7999,"很好的手机，拥有它你的学习效率会中幅提高！甚至会有额外的加成！",8,4,1));
-        items.add(new Item("Xiaomi17",1999,"超级性价比，学习效率提高",4,0,1));
-        items.add(new Item("七度空间",5,"额...包扎伤口的重要道具，可以止血",0,8,2));
-        items.add(new Item("创可贴",5,"包扎伤口的重要道具，可以止血",0,5,2));
-        items.add(new Item("卫生纸",200,"特殊道具，可以进入神奇的状态，提高开心值！",0,-10,2));//未完善
-        items.add(new Item("保时捷",500000,"拥有他是不是可以找到妹妹？",0,100,3));//未
+        items.add(new Item("iPhone17ProMax", 9999, "综合最强手机，拥有它你的学习效率会大幅提高！甚至会有额外的加成！", 10, 5, 1));
+        items.add(new Item("iPadPro", 8999, "超级大的平板,拥有它你的学习效率会中幅提高！甚至会有额外的加成！", 7, 4, 1));
+        items.add(new Item("AppleWatch", 2999, "健康功能很强的手表，你会更注意健康，甚至会有额外的加成！", 1, 15, 1));
+        items.add(new Item("HUAWEIMate80Pro", 7999, "很好的手机，拥有它你的学习效率会中幅提高！甚至会有额外的加成！", 8, 4, 1));
+        items.add(new Item("Xiaomi17", 1999, "超级性价比，学习效率提高", 4, 0, 1));
+        items.add(new Item("七度空间", 5, "额...包扎伤口的重要道具，可以止血", 0, 8, 2));
+        items.add(new Item("创可贴", 5, "包扎伤口的重要道具，可以止血", 0, 5, 2));
+        items.add(new Item("卫生纸", 200, "特殊道具，可以进入神奇的状态，提高开心值！", 0, -10, 2));//未完善
+        items.add(new Item("保时捷", 500000, "拥有他是不是可以找到妹妹？", 0, 100, 3));//未
 
-
+        economics.add(new Economic("定期存款", "风险极低，收益少", 0, 10, 1));
+        economics.add(new Economic("彩票", "低门槛，高收益", 2, 40000, 95));
+        economics.add(new Economic("刮刮乐", "高收益", 20, 50000, 95));
+        economics.add(new Economic("A股", "高风险，高收益", 500, 5000, 70));
+        economics.add(new Economic("美股", "高风险，高收益", 2000, 4000, 80));
+        economics.add(new Economic("期货", "极高风险，极高收益", 3000, 40000, 98));
+        economics.add(new Economic("基金","风险极低，收益少",0,20,3));
     }
 
     //
@@ -103,6 +110,16 @@ public class Student {
         }
         return null;
     }
+
+    public Economic findEconomic(String name){
+        for (int k = 0; k < economics.size(); k++) {
+            Economic e = economics.get(k);
+            if(e.getName().equalsIgnoreCase(name)){
+                return e;
+            }
+        }
+        return null;
+    }
     //
     public List<Drug> getDrugs() {
         return drugs;
@@ -112,6 +129,9 @@ public class Student {
     }
     public List<Subject> getSubjects() {
         return subjects;
+    }
+    public List<Economic> getEconomics(){
+        return economics;
     }
     //
 
