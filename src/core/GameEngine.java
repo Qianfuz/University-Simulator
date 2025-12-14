@@ -1,10 +1,7 @@
 package core;
 
 import model.Student;
-import system.StudySystem;
-import system.Hospital;
-import system.Canteen;
-import system.Store;
+import system.*;
 
 import java.util.*;
 
@@ -12,16 +9,18 @@ public class GameEngine {
 
     private final Random random = new Random();
 
-    private final StudySystem studySystem;
+    private final Study studySystem;
     private final Hospital hospital;
     private final Canteen canteen;
     private final Store store;
+    private final Bank bank;
 
-    public GameEngine(StudySystem studySystem, Hospital hospital, Canteen canteen,Store store) {
+    public GameEngine(Study studySystem, Hospital hospital, Canteen canteen, Store store,Bank bank) {
         this.studySystem = studySystem;
         this.hospital = hospital;
         this.canteen = canteen;
         this.store = store;
+        this.bank=bank;
     }
 
     // 跑 N 天游玩
@@ -76,6 +75,8 @@ public class GameEngine {
             //买东西
             System.out.println(store.showItemList(s1));
             System.out.println(store.buy(s1,sc.next()));
+            System.out.println(bank.showEconomics(s1));
+            System.out.println(bank.buy(s1, sc.next()));
         }
 
         System.out.println("放假啦");

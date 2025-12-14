@@ -19,7 +19,7 @@ public class Bank {
                     .append("  ").append(e.getIntroduce())
                     .append(" 价格 ").append(e.getPrice())
                     .append(" 利率 ").append(e.getRate())
-                    .append(" 风险 ").append(e.getProbably()).append(" %");
+                    .append(" 风险 ").append(e.getProbably()).append(" %").append("\n");
 
         }
         return sb.toString();
@@ -47,7 +47,6 @@ public class Bank {
                 a = chosen.getPrice()*(100+chosen.getRate())/100;
                 sb.append("你投资成功了！");
             } else {
-                a = (chosen.getPrice()*(100+chosen.getRate())/100)/2;
                 sb.append("投资有风险，你失败了！");
             }
             stu.setMoney(stu.getMoney()+a);

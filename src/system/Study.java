@@ -4,7 +4,7 @@ import model.Student;
 import model.Subject;
 import java.util.*;
 
-public class StudySystem {
+public class Study {
     private Random random = new Random();
 
 
