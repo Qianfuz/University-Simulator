@@ -14,13 +14,15 @@ public class GameEngine {
     private final Canteen canteen;
     private final Store store;
     private final Bank bank;
+    private final RandomEvent randomEvent;
 
-    public GameEngine(Study studySystem, Hospital hospital, Canteen canteen, Store store,Bank bank) {
+    public GameEngine(Study studySystem, Hospital hospital, Canteen canteen, Store store,Bank bank,RandomEvent randomEvent) {
         this.studySystem = studySystem;
         this.hospital = hospital;
         this.canteen = canteen;
         this.store = store;
         this.bank=bank;
+        this.randomEvent=randomEvent;
     }
 
     // 跑 N 天游玩
@@ -49,6 +51,8 @@ public class GameEngine {
             System.out.println("你也可以选择下馆子 120元");
             String food = sc.next();
             System.out.println(canteen.eat(s1, food));
+            System.out.println(randomEvent.getRandomEvent(s1));
+
 
             // 健康事件 & 医院
             int d = random.nextInt(20) + 1;
@@ -77,6 +81,7 @@ public class GameEngine {
             System.out.println(store.buy(s1,sc.next()));
             System.out.println(bank.showEconomics(s1));
             System.out.println(bank.buy(s1, sc.next()));
+            System.out.println(randomEvent.getRandomEvent(s1));
         }
 
         System.out.println("放假啦");

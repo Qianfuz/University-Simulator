@@ -13,6 +13,7 @@ public class Student {
     private List<Item>items=new ArrayList<>();
     private List<Drug>drugs=new ArrayList<>();
     private List<Economic>economics=new ArrayList<>();
+    private List<Event>events=new ArrayList<>();
 
     public Student(String name,String character,int energyValue,int healthValue,int money) {
         this.name = name;
@@ -41,6 +42,7 @@ public class Student {
         items.add(new Item("创可贴", 5, "包扎伤口的重要道具，可以止血", 0, 5, 2));
         items.add(new Item("卫生纸", 200, "特殊道具，可以进入神奇的状态，提高开心值！", 0, -10, 2));//未完善
         items.add(new Item("保时捷", 500000, "拥有他是不是可以找到妹妹？", 0, 100, 3));//未
+        items.add(new Item("武林秘籍", 99999999, "你感受到了古老的气息...", 0, 10000, 3));//w
 
         economics.add(new Economic("定期存款", "风险极低，收益少", 0, 2, 1));
         economics.add(new Economic("基金","风险极低，收益少",0,3,3));
@@ -49,6 +51,19 @@ public class Student {
         economics.add(new Economic("A股", "高风险，高收益", 5000, 750, 70));
         economics.add(new Economic("美股", "高风险，高收益", 8000, 1500, 85));
         economics.add(new Economic("期货", "极高风险，极高收益", 30000, 15000, 98));
+
+        events.add(new Event("你在路上捡到了5000元，很开心",5000,0,0,20,null,null));
+        events.add(new Event("经济危机，你损失了10000元",-10000,-10,-10,-10,null,null));
+        events.add(new Event("你抽中了新手机",0,0,0,20,"iPhone17ProMax",null));
+        events.add(new Event("你给校花表白被拒绝，被羞辱",-250,-5,-5,-25,null,null));
+        events.add(new Event("你遇到了神医传人，他给了你一个神秘的盒子",0,0,10,5,null,"神奇药丸"));
+        events.add(new Event("你捡到了一本书，定眼一看，上面写着...",0,0,0,0,"武林秘籍",null));
+        events.add(new Event("你出了车祸，但对方跟你私了了",50000,-30,-60,30,"保时捷",null));
+        events.add(new Event("你摔了一跤，好痛",-300,-5,-10,-5,null,null));
+        events.add(new Event("你被一张布糊脸了",0,0,-1,-20,"七度空间",null));
+        events.add(new Event("你感到今天很幸运",0,0,0,1,null,null));
+        events.add(new Event("你去医院检查，发现自己有小毛病，打折购买了一块表",-2000,0,0,1,"AppleWatch",null));
+        events.add(new Event("你获得了一个神秘道具，但是路上不小心丢了",0,0,0,50,null,null));
 
     }
 
@@ -133,6 +148,9 @@ public class Student {
     }
     public List<Economic> getEconomics(){
         return economics;
+    }
+    public List<Event> getEvents(){
+        return events;
     }
     //
 

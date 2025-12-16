@@ -15,13 +15,14 @@ public class Main {
         Canteen canteen = new Canteen();
         Store store = new Store();
         Bank bank = new Bank();
+        RandomEvent randomEvent = new RandomEvent();
 
-        GameEngine engine = new GameEngine(studySystem, hospital, canteen,store, bank);
+        GameEngine engine = new GameEngine(studySystem, hospital, canteen,store, bank,randomEvent);
 
         System.out.println("请输入你的名字");
         Student s1 = new Student(sc.next(),"开朗",100,100,2000);
 
-        engine.run(s1, 15, sc);
+        engine.run(s1, 3, sc);
 
     }
 }
