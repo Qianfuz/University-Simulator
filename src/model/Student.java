@@ -9,6 +9,7 @@ public class Student {
     private int healthValue;
     private int happyValue;
     private long money;
+    private long debt;
 
     private List<Subject>subjects=new ArrayList<>();
     private List<Item>items=new ArrayList<>();
@@ -16,6 +17,8 @@ public class Student {
     private List<Economic>economics=new ArrayList<>();
     private List<Event>events=new ArrayList<>();
     private List<Achievement>achievements=new ArrayList<>();
+    private List<Work>works=new ArrayList<>();
+    private List<ProfessionalSkill>professionalSkills=new ArrayList<>();
 
     public Student(String name,String character,int energyValue,int healthValue,long money) {
         this.name = name;
@@ -23,7 +26,8 @@ public class Student {
         this.energyValue = energyValue;
         this.healthValue = healthValue;
         this.money = money;
-        this.happyValue=0;
+        this.happyValue=100;
+        this.debt=0;
 
         subjects.add(new Subject("English", 5, 100));
         subjects.add(new Subject("Math", 6, 100));
@@ -90,6 +94,18 @@ public class Student {
         achievements.add(new Achievement("全能派","你达到了中产水平",500000,300,300,300,null));
         //achievements.add(new Achievement("测试","精力值达到50000",1,0,1,0,null));
 
+        works.add(new Work("java开发",5000,"java",-10,-10,-10));
+        works.add(new Work("算法",10000,"Algorithm",-10,-25,-20));
+        works.add(new Work("嵌入式",3000,"C/C++",-10,-5,-10));
+        works.add(new Work("桃色职业",20000,null,10,10,10));
+        works.add(new Work("勤工俭学",500,null,-10,-5,-5));
+        works.add(new Work("鸿蒙应用开发",3500,"C/C++",-10,-5,-10));
+        works.add(new Work("传奇打金",300,null,30,-1,-50));
+        works.add(new Work("隐藏职业",20000,"人脉",10,10,10));
+
+        professionalSkills.add(new ProfessionalSkill("C/C++",5,150));
+        professionalSkills.add(new ProfessionalSkill("人脉",1,10));
+
     }
 
     //
@@ -121,7 +137,13 @@ public class Student {
     public int getHappyValue() {
         return happyValue;
     }
-    //
+    public void setDebt(long debt) {
+        this.debt = debt;
+    }
+    public long getDebt() {
+        return debt;
+    }
+//
 
 
     //
@@ -165,6 +187,26 @@ public class Student {
         }
         return null;
     }
+
+    public Work findWork(String name){
+        for (int i = 0; i < works.size(); i++) {
+            Work w = works.get(i);
+            if(w.getName().equalsIgnoreCase(name)){
+                return w;
+            }
+        }
+        return null;
+    }
+
+    public ProfessionalSkill findProfessionalSkill(String name){
+        for (int i = 0; i < professionalSkills.size(); i++) {
+            ProfessionalSkill p = professionalSkills.get(i);
+            if(p.getName().equalsIgnoreCase(name)){
+                return p;
+            }
+        }
+        return null;
+    }
     //
     public List<Drug> getDrugs() {
         return drugs;
@@ -183,6 +225,12 @@ public class Student {
     }
     public List<Achievement>getAchievements(){
         return achievements;
+    }
+    public List<Work> getWorks() {
+        return works;
+    }
+    public List<ProfessionalSkill> getProfessionalSkills() {
+        return professionalSkills;
     }
     //
 

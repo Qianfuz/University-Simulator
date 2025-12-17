@@ -16,8 +16,9 @@ public class GameEngine {
     private final Bank bank;
     private final RandomEvent randomEvent;
     private final AchievementSystem achievementSystem;
+    private final Company company;
 
-    public GameEngine(Study studySystem, Hospital hospital, Canteen canteen, Store store,Bank bank,RandomEvent randomEvent,AchievementSystem achievementSystem) {
+    public GameEngine(Study studySystem, Hospital hospital, Canteen canteen, Store store,Bank bank,RandomEvent randomEvent,AchievementSystem achievementSystem,Company company) {
         this.studySystem = studySystem;
         this.hospital = hospital;
         this.canteen = canteen;
@@ -25,6 +26,7 @@ public class GameEngine {
         this.bank=bank;
         this.randomEvent=randomEvent;
         this.achievementSystem=achievementSystem;
+        this.company=company;
     }
 
     // 跑 N 天游玩
@@ -56,7 +58,8 @@ public class GameEngine {
             String food = sc.next();
             System.out.println(canteen.eat(s1, food));
             //System.out.println(randomEvent.getRandomEvent(s1));
-
+            String work1 = sc.next();
+            System.out.println(company.doWork(s1,work1));
             // 健康事件 & 医院
             int d = random.nextInt(20) + 1;
             if (d > 18) {

@@ -17,8 +17,9 @@ public class Main {
         Bank bank = new Bank();
         RandomEvent randomEvent = new RandomEvent();
         AchievementSystem achievementSystem = new AchievementSystem();
+        Company company = new Company();
 
-        GameEngine engine = new GameEngine(studySystem, hospital, canteen,store, bank,randomEvent,achievementSystem);
+        GameEngine engine = new GameEngine(studySystem, hospital, canteen,store, bank,randomEvent,achievementSystem,company);
 
         System.out.println("请输入你的名字");
         Student s1 = new Student(sc.next(),"开朗",100,100,2000);
