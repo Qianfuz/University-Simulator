@@ -12,7 +12,7 @@ public class RandomEvent {
 
     public String getRandomEvent(Student stu){
         int a = random.nextInt(100);
-        if(a>=25 || stu.getEvents()==null || stu.getEvents().isEmpty()){
+        if(a>=15 || stu.getEvents()==null || stu.getEvents().isEmpty()){
             return  "";
         }
         int b = random.nextInt(stu.getEvents().size());

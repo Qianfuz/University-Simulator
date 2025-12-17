@@ -16,13 +16,14 @@ public class Main {
         Store store = new Store();
         Bank bank = new Bank();
         RandomEvent randomEvent = new RandomEvent();
+        AchievementSystem achievementSystem = new AchievementSystem();
 
-        GameEngine engine = new GameEngine(studySystem, hospital, canteen,store, bank,randomEvent);
+        GameEngine engine = new GameEngine(studySystem, hospital, canteen,store, bank,randomEvent,achievementSystem);
 
         System.out.println("请输入你的名字");
         Student s1 = new Student(sc.next(),"开朗",100,100,2000);
 
-        engine.run(s1, 3, sc);
+        engine.run(s1,1, sc);
 
     }
 }

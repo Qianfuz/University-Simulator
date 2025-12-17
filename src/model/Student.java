@@ -7,6 +7,7 @@ public class Student {
     private String character;
     private int energyValue;
     private int healthValue;
+    private int happyValue;
     private int money;
 
     private List<Subject>subjects=new ArrayList<>();
@@ -14,6 +15,7 @@ public class Student {
     private List<Drug>drugs=new ArrayList<>();
     private List<Economic>economics=new ArrayList<>();
     private List<Event>events=new ArrayList<>();
+    private List<Achievement>achievements=new ArrayList<>();
 
     public Student(String name,String character,int energyValue,int healthValue,int money) {
         this.name = name;
@@ -21,6 +23,7 @@ public class Student {
         this.energyValue = energyValue;
         this.healthValue = healthValue;
         this.money = money;
+        this.happyValue=0;
 
         subjects.add(new Subject("English", 5, 100));
         subjects.add(new Subject("Math", 6, 100));
@@ -65,6 +68,17 @@ public class Student {
         events.add(new Event("你去医院检查，发现自己有小毛病，打折购买了一块表",-2000,0,0,1,"AppleWatch",null));
         events.add(new Event("你获得了一个神秘道具，但是路上不小心丢了",0,0,0,50,null,null));
 
+        achievements.add(new Achievement("人生赢家","资产达到500万",5000000,0,0,0,null));
+        achievements.add(new Achievement("快乐最重要","快乐值达到1000",0,0,0,1000,null));
+        achievements.add(new Achievement("养生派","健康值达到1000",0,0,1000,0,null));
+        achievements.add(new Achievement("活力达人","精力值达到1000",0,1000,0,0,null));
+        achievements.add(new Achievement("驾考宝典","获得了保时捷",0,0,0,0,"保时捷"));
+        achievements.add(new Achievement("武当派","获得了武林秘籍",0,0,0,0,"武林秘籍"));
+        achievements.add(new Achievement("白手起家","资产达到1000000000",1000000000,0,0,0,null));
+        achievements.add(new Achievement("体修，启动！","体力值达到50000",0,0,50000,0,null));
+        achievements.add(new Achievement("魂修，启动！","精力值达到50000",0,50000,0,0,null));
+        //achievements.add(new Achievement("测试","精力值达到50000",1,0,1,0,null));
+
     }
 
     //
@@ -90,8 +104,12 @@ public class Student {
     public int getMoney(){
         return money;
     }
-
-
+    public void setHappyValue(int happyValue) {
+        this.happyValue = happyValue;
+    }
+    public int getHappyValue() {
+        return happyValue;
+    }
     //
 
 
@@ -151,6 +169,9 @@ public class Student {
     }
     public List<Event> getEvents(){
         return events;
+    }
+    public List<Achievement>getAchievements(){
+        return achievements;
     }
     //
 

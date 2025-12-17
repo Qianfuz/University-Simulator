@@ -22,27 +22,21 @@ public class Event {
     public int getHappyValue() {
         return happyValue;
     }
-
     public int getEnergyValue() {
         return EnergyValue;
     }
-
     public int getMoney() {
         return money;
     }
-
     public int getHealthValue() {
         return healthValue;
     }
-
     public String getIntroduction() {
         return introduction;
     }
-
     public String getDrugs() {
         return drugs;
     }
-
     public String getItems() {
         return items;
     }

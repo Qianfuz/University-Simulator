@@ -15,14 +15,16 @@ public class GameEngine {
     private final Store store;
     private final Bank bank;
     private final RandomEvent randomEvent;
+    private final AchievementSystem achievementSystem;
 
-    public GameEngine(Study studySystem, Hospital hospital, Canteen canteen, Store store,Bank bank,RandomEvent randomEvent) {
+    public GameEngine(Study studySystem, Hospital hospital, Canteen canteen, Store store,Bank bank,RandomEvent randomEvent,AchievementSystem achievementSystem) {
         this.studySystem = studySystem;
         this.hospital = hospital;
         this.canteen = canteen;
         this.store = store;
         this.bank=bank;
         this.randomEvent=randomEvent;
+        this.achievementSystem=achievementSystem;
     }
 
     // 跑 N 天游玩
@@ -85,5 +87,6 @@ public class GameEngine {
         }
 
         System.out.println("放假啦");
+        System.out.println(achievementSystem.showAchievement(s1));
     }
 }
