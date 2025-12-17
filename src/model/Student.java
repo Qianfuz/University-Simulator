@@ -8,7 +8,7 @@ public class Student {
     private int energyValue;
     private int healthValue;
     private int happyValue;
-    private int money;
+    private long money;
 
     private List<Subject>subjects=new ArrayList<>();
     private List<Item>items=new ArrayList<>();
@@ -17,7 +17,7 @@ public class Student {
     private List<Event>events=new ArrayList<>();
     private List<Achievement>achievements=new ArrayList<>();
 
-    public Student(String name,String character,int energyValue,int healthValue,int money) {
+    public Student(String name,String character,int energyValue,int healthValue,long money) {
         this.name = name;
         this.character = character;
         this.energyValue = energyValue;
@@ -47,13 +47,23 @@ public class Student {
         items.add(new Item("保时捷", 500000, "拥有他是不是可以找到妹妹？", 0, 100, 3));//未
         items.add(new Item("武林秘籍", 99999999, "你感受到了古老的气息...", 0, 10000, 3));//w
 
-        economics.add(new Economic("定期存款", "风险极低，收益少", 0, 2, 1));
-        economics.add(new Economic("基金","风险极低，收益少",0,3,3));
-        economics.add(new Economic("彩票", "低门槛，高收益", 200, 4000, 99));
-        economics.add(new Economic("刮刮乐", "高收益", 200, 5000, 99));
-        economics.add(new Economic("A股", "高风险，高收益", 5000, 750, 70));
-        economics.add(new Economic("美股", "高风险，高收益", 8000, 1500, 85));
-        economics.add(new Economic("期货", "极高风险，极高收益", 30000, 15000, 98));
+        economics.add(new Economic("定期存款", "风险极低，收益少", 0, 2, 1,1));
+        economics.add(new Economic("基金","风险极低，收益少",0,3,3,1));
+        economics.add(new Economic("彩票", "低门槛，高收益", 200, 4000, 99,2));
+        economics.add(new Economic("刮刮乐", "高收益", 200, 5000, 99,2));
+        economics.add(new Economic("A股", "高风险，高收益", 5000, 750, 70,1));
+        economics.add(new Economic("美股", "高风险，高收益", 8000, 1500, 85,1));
+        economics.add(new Economic("期货", "极高风险，极高收益", 30000, 15000, 98,1));
+        economics.add(new Economic("大额存单", "大客户的特殊产品", 500000, 6, 2,1));
+        economics.add(new Economic("大额存单B", "大客户的特殊产品", 1000000, 8, 2,1));
+        economics.add(new Economic("大额存单C", "大客户的特殊产品", 3000000, 10, 1,1));
+        economics.add(new Economic("国债", "???", 1000000, 6, 0,1));
+        economics.add(new Economic("国债B", "???", 100000000, 8,0 ,1));
+        economics.add(new Economic("BTC", "谁也不知道是亏是赚", 350000, 0,50 ,3));
+        economics.add(new Economic("Doge", "门槛低", 500, 0,70 ,3));
+        economics.add(new Economic("Trump", "门槛略低", 1500, 0,60 ,3));
+
+
 
         events.add(new Event("你在路上捡到了5000元，很开心",5000,0,0,20,null,null));
         events.add(new Event("经济危机，你损失了10000元",-10000,-10,-10,-10,null,null));
@@ -77,13 +87,14 @@ public class Student {
         achievements.add(new Achievement("白手起家","资产达到1000000000",1000000000,0,0,0,null));
         achievements.add(new Achievement("体修，启动！","体力值达到50000",0,0,50000,0,null));
         achievements.add(new Achievement("魂修，启动！","精力值达到50000",0,50000,0,0,null));
+        achievements.add(new Achievement("全能派","你达到了中产水平",500000,300,300,300,null));
         //achievements.add(new Achievement("测试","精力值达到50000",1,0,1,0,null));
 
     }
 
     //
 
-    public void setMoney(int money) {
+    public void setMoney(long money) {
         this.money = money;
     }
     public void setEnergyValue(int energyValue) {
@@ -101,7 +112,7 @@ public class Student {
     public int getHealthValue(){
         return healthValue;
     }
-    public int getMoney(){
+    public long getMoney(){
         return money;
     }
     public void setHappyValue(int happyValue) {

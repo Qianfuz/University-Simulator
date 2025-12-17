@@ -25,26 +25,37 @@ public class Bank {
         return sb.toString();
     }
 
-    public String buy(Student stu,String economicName){
+    public String buy(Student stu,String economicName,int number){
         Economic chosen = stu.findEconomic(economicName);
         StringBuilder sb = new StringBuilder();
         if(chosen==null){
             return "没有这种理财产品";
         }
+        long Money=stu.getMoney();
+        int Rate=chosen.getRate();
+        long Price=chosen.getPrice();
+        if(chosen.getType()==2){
+            Price*=number;
+        }
+        if(chosen.getType()==3){
+            Price*=number;
+            Rate=random.nextInt(50)+51;
+        }
+
         int p = random.nextInt(100)+1;
-        if(chosen.getPrice()==0){
+        if(Price==0){
             if(p>chosen.getProbably()){
-                stu.setMoney(stu.getMoney()*(100+chosen.getRate())/100);
+                stu.setMoney(Money/100*(100+Rate));
                 sb.append("你投资成功了！");
             } else {
-                stu.setMoney((stu.getMoney()*(100-chosen.getRate())/100));
+                stu.setMoney((Money/100*(100-Rate)));
                 sb.append("投资有风险，你失败了！");
             }
         } else {
-            int a=0;
-            stu.setMoney(stu.getMoney()-chosen.getPrice());
+            long a=0;
+            stu.setMoney(Money-Price);
             if(p>chosen.getProbably()){
-                a = chosen.getPrice()*(100+chosen.getRate())/100;
+                a = Price/100*(100+Rate);
                 sb.append("你投资成功了！");
             } else {
                 sb.append("投资有风险，你失败了！");
@@ -56,7 +67,7 @@ public class Bank {
             return "你因病负债，借了校园贷，被爆通讯录... 游戏失败";
         }
 
-        sb.append("你现在有 余额： " + stu.getMoney());
+        sb.append("你现在有 余额： ").append(stu.getMoney());
         return sb.toString();
     }
 

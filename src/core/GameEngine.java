@@ -30,7 +30,8 @@ public class GameEngine {
     // 跑 N 天游玩
     public void run(Student s1, int days, Scanner sc) {
         System.out.println("因为你成绩优异，被奖励 50000 奖学金，你可以购买一件物品");
-        s1.setMoney(500000);
+        s1.setMoney(50000);
+        s1.setMoney(1000000000);
         System.out.println(s1.getName() + " 同学你好，每天睡醒，请输入一门科目，进行学习 English Java Math Chinese Algorithm");
         System.out.println(store.showItemList(s1));
         System.out.println(store.buy(s1,sc.next()));
@@ -84,7 +85,7 @@ public class GameEngine {
                 System.out.println(store.buy(s1,sc.next()));
             } else {
                 System.out.println(bank.showEconomics(s1));
-                System.out.println(bank.buy(s1, sc.next()));
+                System.out.println(bank.buy(s1, sc.next(),sc.nextInt()));
             }
 
             System.out.println(randomEvent.getRandomEvent(s1));
