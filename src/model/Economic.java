@@ -23,39 +23,30 @@ public class Economic {
     public void setIntroduce(String introduce) {
         this.introduce = introduce;
     }
-
     public void setName(String name) {
         this.name = name;
     }
-
     public void setPrice(int price) {
         this.price = price;
     }
-
     public void setRate(int rate) {
         this.rate = rate;
     }
-
     public String getName() {
         return name;
     }
-
     public String getIntroduce() {
         return introduce;
     }
-
     public int getRate() {
         return rate;
     }
-
     public int getPrice() {
         return price;
     }
-
     public int getProbably() {
         return probably;
     }
-
     public void setProbably(int probably) {
         this.probably = probably;
     }

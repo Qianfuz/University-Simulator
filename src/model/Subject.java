@@ -18,7 +18,6 @@ public class Subject {
     public void setGain(int addNum){
         gain=addNum;
     }
-    //
     public String getName(){
         return name;
     }
