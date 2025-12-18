@@ -89,7 +89,10 @@ public class GameEngine {
                 System.out.println(store.buy(s1,sc.next()));
             } else {
                 System.out.println(bank.showEconomics(s1));
-                System.out.println(bank.buy(s1, sc.next(),sc.nextInt()));
+                String a1 = sc.next();
+                System.out.println("你想买多少?");
+                int  b1 = sc.nextInt();
+                System.out.println(bank.buy(s1,a1 ,b1));
             }
 
             System.out.println(randomEvent.getRandomEvent(s1));
