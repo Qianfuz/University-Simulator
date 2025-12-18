@@ -45,17 +45,17 @@ public class Bank {
         int p = random.nextInt(100)+1;
         if(Price==0){
             if(p>chosen.getProbably()){
-                stu.setMoney(Money/100*(100+Rate));
+                stu.setMoney(Money*(100+Rate)/100);
                 sb.append("你投资成功了！");
             } else {
-                stu.setMoney((Money/100*(100-Rate)));
+                stu.setMoney(Money*(100-Rate)/100);
                 sb.append("投资有风险，你失败了！");
             }
         } else {
             long a=0;
             stu.setMoney(Money-Price);
             if(p>chosen.getProbably()){
-                a = Price/100*(100+Rate);
+                a = Price*(100+Rate)/100;
                 sb.append("你投资成功了！");
             } else {
                 sb.append("投资有风险，你失败了！");

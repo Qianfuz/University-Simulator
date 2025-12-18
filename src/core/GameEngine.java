@@ -58,6 +58,7 @@ public class GameEngine {
             String food = sc.next();
             System.out.println(canteen.eat(s1, food));
             //System.out.println(randomEvent.getRandomEvent(s1));
+            System.out.println(company.showWorkList(s1));
             String work1 = sc.next();
             System.out.println(company.doWork(s1,work1));
             // 健康事件 & 医院

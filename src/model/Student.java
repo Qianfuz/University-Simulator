@@ -102,6 +102,8 @@ public class Student {
         works.add(new Work("鸿蒙应用开发",3500,"C/C++",-10,-5,-10));
         works.add(new Work("传奇打金",300,null,30,-1,-50));
         works.add(new Work("隐藏职业",20000,"人脉",10,10,10));
+        works.add(new Work(null,20000,"123",10,10,10));
+
 
         professionalSkills.add(new ProfessionalSkill("C/C++",5,150));
         professionalSkills.add(new ProfessionalSkill("人脉",1,10));

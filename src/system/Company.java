@@ -7,6 +7,22 @@ import java.util.*;
 
 public class Company {
 
+    public String showWorkList(Student stu){
+        List<Work>works=stu.getWorks();
+        StringBuilder sb = new StringBuilder();
+        sb.append("你可以选择 \n");
+        for (int i = 0; i < works.size(); i++) {
+            Work w = works.get(i);
+            sb.append(w.getName());
+            if(w.getSkill()==null){
+                sb.append(" 无需技能\n");
+            } else {
+                sb.append(" 需要技能 ").append(w.getSkill()).append("\n");
+            }
+        }
+        return sb.toString();
+    }
+
     public String doWork(Student stu, String workName) {
         StringBuilder sb = new StringBuilder();
         Work chosen = stu.findWork(workName);
@@ -26,7 +42,7 @@ public class Company {
                 return "你学艺不精，请继续学习 " + chosenPro.getName();
             }
         }
-        if(chosen != null && chosenSub == null && chosenPro == null){
+        if(chosen.getSkill() != null && chosenSub == null && chosenPro == null){
             return "你的技能树和该工作不匹配";
         }
         stu.setMoney(stu.getMoney() + chosen.getMoney());
